@@ -1,0 +1,18 @@
+<nav>
+    <img src="media/logo1.png" width="100" height="100" style="display:inline" class="logo"/>
+    <ul class="nav-links">
+        <li style="display:inline"><a href="home">Home</a></li>
+        <li style="display:inline"><a href="music">Music</a></li>
+        <li style="display:inline"><a href="contact">Contact</a></li>
+        <li style="display:inline" class="btn" ><a href="signup">Sign Up</a></li>
+        <li style="display:inline" class="loginbutton"><a href="login">Login</a></li>
+    </ul>
+    <div class="search-list" style="display: inline">
+        <form class="d-flex" method=POST action="search_songs">
+            {% csrf_token %}
+    
+            <input class="form-control me-2" type="search" placeholder="Search songs" aria-label="Search" name="searched">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+    </div>
+</nav>

@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>register</h1>
+<br/><br/>
+<div class="form-group">
+  <table>
+    UserAccountForm
+  </table>
+  <form method="POST">
+    {% csrf_token %}
+    {{ forms.UserAccountForm }}
+    <button class="btn btn-secodary">Register</button>
+  </form>
+</div>
+
+{% endblock %}

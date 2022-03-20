@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelementplayer.min.css" rel="stylesheet"/>
+  <link href="static/style.css" rel="stylesheet" type="text/css"/>
+  <title>My Music Player Website</title>
+  <style>
+    body {background: #954bac;}
+  </style>
+ </head>
+ <body>
+    <nav>
+        <img src="media/logo1.png" width="80" height="80" style="display:inline; padding: 15px;"/>
+        <ul class="nav-links">
+            <li style="display:inline"><a href="home">Home</a></li>
+            <li style="display:inline"><a href="music">Music</a></li>
+            <li style="display:inline"><a href="contact">Contact</a></li>
+            <li style="display:inline; background-color: rgb(194, 107, 56);" class="btn" ><a href="signup">Sign Up</a></li>
+            <li style="display:inline; background-color: darkcyan;" class="loginbutton"><a href="login">Login</a></li>
+        </ul>
+        <div class="search-list" style="display: inline">
+            <form class="d-flex" method=POST action="search_songs">
+                {% csrf_token %}
+                <input type="search" placeholder="Search songs" aria-label="Search" style="height:50px;" name="searched">
+                <button class="btn btn-outline-secondary" type="submit" style="width: 150px; background-color:darkcyan;">Search</button>
+            </form>
+        </div>
+    </nav>
+    <br/>
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js">
+  </script>
+  <script src="{% static './script.js' %}">
+  </script>
+ </body>
+</html>

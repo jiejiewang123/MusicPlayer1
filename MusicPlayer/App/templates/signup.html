@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="media/DSC_5380-special.jpg" alt="wedding" class="wedding">
+  </div>
+
+  <div class="container">
+   <center>
+    <label for="uname"><b>Create your Username</b></label>
+    <br/>
+    <input type="text" placeholder="Enter Username" name="uname" style="width: 400px;" required>
+    <br/>
+
+    <label for="psw"><b>Create your Password</b></label>
+    <br/>
+    <input type="password" placeholder="Enter Password" name="psw" style="width: 400px;" required>
+    <br/>
+
+    <label for="psw"><b>Repeat your Password</b></label>
+    <br/>
+    <input type="password" placeholder="Enter Password" name="psw" style="width: 400px;" required>
+    <br/>
+    <button style="width:150px">Submit</button>
+    <br/>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+   </center>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+{% endblock %}

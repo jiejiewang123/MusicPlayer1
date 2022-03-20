@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<center>
+   
+
+    {% if searched %}
+        <h1>You searched for {{ searched }}</h1>
+        <br/>
+        {% for item in songs_searched %}
+            <a href="{% url 'App:show_music' item.id %}">{{ item }} - {{ item.artist }}</a><br/>
+        {% endfor %}
+
+    {% else %}
+     <h1>You forgot to search for a song...</h1>
+    {% endif %}
+
+</center>
+
+{% endblock %}
